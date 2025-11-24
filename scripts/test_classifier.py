@@ -49,7 +49,7 @@ def main():
     args = parser.parse_args()
 
     data_path = Path(args.data_path)
-    model_dir = Path("model_artifacts/classifier")
+    model_id = "leragogogo/github-issues-classifier"
 
     # Load dataset
     df = pd.read_json(data_path)
@@ -76,8 +76,8 @@ def main():
     # Convert test_df to HF Dataset
     test_ds = Dataset.from_pandas(test_df[["text", "label"]])
 
-    tokenizer = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    tokenizer = AutoTokenizer.from_pretrained(model_id)
+    model = AutoModelForSequenceClassification.from_pretrained(model_id)
 
     def _tokenize(batch):
         return tokenize_fn(batch, tokenizer, max_length=args.max_length)
