@@ -1,0 +1,9 @@
+datasets/*
+!datasets/.gitkeep
+
+model_artifacts/*
+!model_artifacts/.gitkeep
+
+venv/
+
+.idea/
