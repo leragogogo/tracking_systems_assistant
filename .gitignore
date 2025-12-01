@@ -6,4 +6,7 @@ model_artifacts/*
 
 venv/
 
+**/__pycache__/
+
+
 .idea/
