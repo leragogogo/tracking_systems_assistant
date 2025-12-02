@@ -7,8 +7,15 @@ It provides a FastAPI-based API that wraps two fine-tuned transformer models:
 - DistilBERT for issue type classification (bug, feature, question)
 Both models are loaded once from Hugging Face at startup and served through an /api/issues/analyze endpoint.
 
+To fine-tune both models the following dataset was used: **[Kaggle](https://www.kaggle.com/datasets/anmolkumar/github-bugs-prediction)**
+
 Classification model is available at: **[Hugging Face](https://huggingface.co/leragogogo/github-issues-classifier)** <br>
 Summarization model is available at: **[Hugging Face](https://huggingface.co/leragogogo/github-issues-summarizer)**
+
+## Project structure
+Code related to API is located in app/ folder.
+Training and testing scripts for both models are located in scripts/ folder.
+
 
 ## Prerequisites
 - Python 3.10+
